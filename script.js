@@ -8,6 +8,15 @@
  *  4. Sagar Manoj Wagh
  *  5. Jay Munde
  */
+import { createClient } from '@supabase/supabase-js'
+const supabase = createClient('https://ugdopewunzkwcrmkzxdh.supabase.co/rest/v1/', 'sb_publishable_QmJg1to-bfnjuAOA5s-Wzw_CHbCrSDs')
+
+// Add a lost item:
+await supabase.from('items').insert([newItem])
+
+// Fetch all lost items:
+let { data: items } = await supabase.from('items').select('*')
+
 
 const ADMIN_PASS = "Rohit@075";
 
